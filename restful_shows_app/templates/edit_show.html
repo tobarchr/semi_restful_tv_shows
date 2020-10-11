@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://use.typekit.net/pyx1jcb.css">
+</head>
+
+<body>
+    <div id="container">
+        <td><a href="/shows">Go Back</a></td>
+        <h1>Edit Show {{all_show_details.id}}</h1>
+        <form action="/shows/{{all_show_details.id}}/update_show" method="POST">
+            {% csrf_token %}
+            <div>
+                <b>Title</b>
+                <input type="text" id="title" name="title" value="{{all_show_details.title}}" }>
+                <b>Network</b>
+                <input type="text" id="network" name="network" value="{{all_show_details.network}}">
+            </div>
+            <div>
+                <b>Release Date</b>
+                <input type="date" id="release_date" name="release_date" class="form-control"
+                    value="{{all_show_details.release_date|date:'m/d/y' }}">
+                <b>Description</b>
+                <input type="text" id="desc" name="desc" value="{{all_show_details.description}}">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+        <td><a href="/shows/{{all_show_details.id}}">Go to Show</a></td>
+    </div>
+</body>
+
+</html>

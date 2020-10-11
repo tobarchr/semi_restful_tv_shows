@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read(One)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://use.typekit.net/pyx1jcb.css">
+</head>
+
+<body>
+    <div id="container">
+        <td><a href="/shows">Go Back</a></td>
+        <h1>TV Show {{all_show_details.id}}</h1>
+        <p>Title: {{all_show_details.title}}</p>
+        <p>Network: {{all_show_details.network}}</p>
+        <p>Release Date: {{all_show_details.release_date}}</p>
+        <p>Description: {{all_show_details.description}}</p>
+        <p>Last Updated: {{all_show_details.updated_at}}</p>
+        <a href="/shows/{{all_show_details.id}}/edit">Edit</a></td>
+    </div>
+</body>
+
+</html>
